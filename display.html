@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Page</title>
+
+    <link rel="stylesheet" href="../striq/form.css">
+
+</head>
+<body>
+
+    <div class="alert-box">
+        <p class="alert"></p>
+    </div>
+
+    <div class="form">
+        <h1 class="heading">Fill in Details</h1>
+        <input type="text" placeholder="name of service" autocomplete="off" class="name of service" required>
+        <input type="email" placeholder="email" autocomplete="off" class="email" required>
+        <input type="text" placeholder="address" autocomplete="off" class="address" required>
+        <input type="tel" name="telphone" placeholder="8888 888 8888" pattern="[0-9]{4} [0-9]{3} [0-9]{4}" maxlength="12"  title="Eleven digits code" required/> 
+        <button class="submit-btn">Submit</button>
+    </div>
+
+    <script src="../striq/form.js"></script>
+    
+</body>
+</html>
