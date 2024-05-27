@@ -23,8 +23,6 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(intialPath, "index.html"));
-    //    res.sendFile("JS/index.html");
-   //res.send("I am here")
 })
 
 app.get('/login', (req, res) => {
