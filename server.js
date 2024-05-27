@@ -3,25 +3,28 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const knex = require('knex');
 
-const db = knex({
-    client: 'pg',
-    connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: 'test',
-        database: 'loginform'
-    }
-})
+// const db = knex({
+//     client: 'pg',
+//     connection: {
+//         host: '127.0.0.1',
+//         user: 'postgres',
+//         password: 'test',
+//         database: 'loginform'
+//     }
+// })
 
 const app = express();
 
 let intialPath = path.join(__dirname, "public");
 
+app.use(express.static("public"));
 app.use(bodyParser.json());
-app.use(express.static(intialPath));
+
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(intialPath, "index.html"));
+    res.sendFile(path.join(intialPath, "JS/index.html"));
+    //    res.sendFile("JS/index.html");
+   //res.send("I am here")
 })
 
 app.get('/login', (req, res) => {
