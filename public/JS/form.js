@@ -63,6 +63,30 @@ if(login){ // means login page is open
         })
     })
 
+}else{ // means the display page is open
+        const nameofservice = document.querySelector('.nameofservice');
+        const email = document.querySelector('.email');
+        const address = document.querySelector('.address');
+        const telephone = document.querySelector('.telephone');
+        display.addEventListener('click', () => {
+            fetch('/display-user', {
+                method: 'post',
+                headers: new Headers({'Content-Type': 'application/json'}),
+                body: JSON.stringify({
+                    nameofservice: nameofservice.value,
+                    email: email.value,
+                    address: address.value,
+                    telephone : telephone.value
+                })
+            })
+            .then(res => {
+                console.log(res)
+            })
+            .then(data => {
+                //validateData(data);
+            })
+        })
+
 }
 
 // const validateData = (data) => {

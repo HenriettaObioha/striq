@@ -22,7 +22,7 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 
 
-app.get('/', (req, res) => {
+app.get('/index', (req, res) => {
     res.sendFile(path.join(intialPath, "index.html"));
 })
 
@@ -32,6 +32,10 @@ app.get('/login', (req, res) => {
 
 app.get('/register', (req, res) => {
     res.sendFile(path.join(intialPath, "register.html"));
+})
+
+app.get('/display', (req, res) => {
+    res.sendFile(path.join(intialPath, "display.html"));
 })
 
 app.post('/register-user', (req, res) => {
@@ -57,6 +61,31 @@ app.post('/register-user', (req, res) => {
         })
     }
 })
+
+app.post('/display-user', (req, res) => {
+    const { nameofservice, email, address, telephone } = req.body;
+
+    if(!nameofservice.length || !email.length || !address.length || !telephone.length){
+        res.json('fill all the fields');
+    } else{
+        db("clients").insert({
+            nameofservice: nameofservice,
+            email: email,
+            address: address,
+            telephone: telephone,
+        })
+        .returning(["nameofservice", "email", "address", "telephone"])
+        .then(data => {
+            res.json(data[0])
+        })
+        .catch(err => {
+            if(err.detail.includes('already exists')){
+                res.json('already exists');
+            }
+        })
+    }
+})
+
 
 app.post('/login-user', (req, res) => {
     const { email, password } = req.body;
