@@ -1,4 +1,4 @@
-INSERT INTO register.clients (firstname, lastname, email,)
+INSERT INTO register.clients (firstname, lastname, email)
 VALUES (
     'Chimamanda',
     'Adiche',

@@ -16,7 +16,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('images/doc.jpg');
+    background: url('images/lambo.jpg');
     background-size: cover;
     background-position: center;
     font-family: 'roboto', sans-serif;
@@ -45,13 +45,14 @@ input,
     height: 50px;
     display: block;
     margin: 20px auto;
-    border-radius: 5px;
+    border-radius: 20px;
     background: rgba(255, 255, 255, 0.3);
     border: solid 2px rgb(88, 76, 76);
     color: #272525;
     padding: 15px;
     transition: .5s;
     text-transform: capitalize;
+    position:relative;
 }
 
 input::placeholder{
@@ -68,19 +69,49 @@ input:focus::placeholder{
     color: #000;
 }
 
-.submit-btn{
-    width: auto;
-    padding: 0 20px;
+.submit-btn-login{
+    width: 10em;
+   /*padding: 0 80px;*/
     cursor: pointer;
-    margin: 50px auto 0;
+    margin: auto;
     opacity: 0;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+}
+
+.submit-btn-register{
+    cursor: pointer;
+    margin: auto;
+    opacity: 0;
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    width: 10em;
+}
+
+.submit-btn-display{
+    opacity: 0;
+    width: 20%;
+    height: 50px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border: solid 2px rgb(88, 76, 76);
+    color: #272525;
+    padding: 15px;
+    transition: .5s;
+    text-transform: capitalize;
+    position:relative;
+
 }
 
 .link{
     opacity: 0;
     text-align: center;
     text-transform: capitalize;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgb(46, 42, 42);
     display: block;
     margin: 30px auto;
 }

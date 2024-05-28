@@ -3,15 +3,16 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const knex = require('knex');
 
-// const db = knex({
-//     client: 'pg',
-//     connection: {
-//         host: '127.0.0.1',
-//         user: 'postgres',
-//         password: 'test',
-//         database: 'loginform'
-//     }
-// })
+const db = knex({
+    client: 'mysql2',
+    connection: {
+        host: '127.0.0.1',
+        user: 'root',
+        password: 'Henrie$12',
+        database: 'register'
+    }
+})
+//db.migrate.latest();
 
 const app = express();
 
@@ -34,15 +35,16 @@ app.get('/register', (req, res) => {
 })
 
 app.post('/register-user', (req, res) => {
-    const { name, email, password } = req.body;
+    const { firstname, lastname, email, password } = req.body;
 
-    if(!name.length || !email.length || !password.length){
+    if(!firstname.length || !lastname.length || !email.length || !password.length){
         res.json('fill all the fields');
     } else{
-        db("users").insert({
-            name: name,
+        db("clients").insert({
+            firstname: firstname,
+            lastname: lastname,
             email: email,
-            password: password
+            password: password,
         })
         .returning(["name", "email"])
         .then(data => {
@@ -59,8 +61,8 @@ app.post('/register-user', (req, res) => {
 app.post('/login-user', (req, res) => {
     const { email, password } = req.body;
 
-    db.select('name', 'email')
-    .from('users')
+    db.select("*")
+    .from('clients')
     .where({
         email: email,
         password: password
