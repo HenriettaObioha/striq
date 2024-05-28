@@ -18,6 +18,7 @@ window.onload = () => {
 
 const register = document.querySelector('.submit-btn-register');
 const login = document.querySelector('.submit-btn-login');
+const display = document.querySelector('.submit-btn-display');
 
 if(login){ // means login page is open
     const email = document.querySelector('.email');
@@ -55,7 +56,7 @@ if(login){ // means login page is open
             })
         })
         .then(res => {
-            console.log(res.json())
+            console.log(res)
         })
         .then(data => {
             //validateData(data);
