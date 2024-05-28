@@ -34,6 +34,7 @@ if(login){ // means login page is open
         })
         .then(res => {
             console.log(res)
+            window.location.href = "http://localhost:3000/display"
         })
         .then(data => {
             // validateData(data);
@@ -57,13 +58,15 @@ if(login){ // means login page is open
         })
         .then(res => {
             console.log(res)
+            window.location.href = "http://localhost:3000/login"
         })
-        .then(data => {
+        .catch(data => {
+            console.log(data)
             //validateData(data);
         })
     })
 
-}else{ // means the display page is open
+}if (display){ // means the display page is open
         const nameofservice = document.querySelector('.nameofservice');
         const email = document.querySelector('.email');
         const address = document.querySelector('.address');
