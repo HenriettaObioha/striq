@@ -5,7 +5,7 @@ const knex = require('knex');
 const { randomUUID } = require('crypto');
 
 const db = knex({
-    client: 'mysql2',
+    client: 'pg',
     connection: {
         host: '127.0.0.1',
         user: 'root',
