@@ -8,37 +8,47 @@
     
     <title> STRIQ  </title>
 
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/card.css" type="text/css">
     <!-- <script src="JS/card.js"></script> -->
 </head>
 
-<body class="with-blur-backdrop">
+<body class="with-blur-backdrop"> <!--blurs the background-->
     <div class="container">
         <div class="card">
           <!-- <div class="qr"> -->
-            <!-- <img src="./images/lambo.jpg" alt="qr code which leads to Frontend Mentor"> -->
+            <!-- <img src="./images/doc.jpg" alt="qr code which leads to Frontend Mentor"> -->
                 <div class="content">
 
                     <!-- Output Form Details -->
                     <ul>
-                       <% users.forEach(user => { %> 
-                        <li>
+                      <li><% users.forEach(user => { %> </li></h1>
+                        <h2>Name of Service:</h2>
+                            <li>
                           <%= user.nameofservice %>
-                        </li> 
+                        </li>
+                        
+                        <h2> 
+                          Email:</h2>
                         <li>
                           <%= user.email %>
                         </li>
+                        
+                        <h2>
+                          Address:</h2>
                         <li>
                           <%= user.address %>
                         </li>
+                        
+                        <h2>
+                          Telephone:</h2>
                         <li>
                           <%= user.telephone %>
                         </li>
+                        
                         <% }) %>
-                      
                     </ul>
-        
+                    <a href="/login" class="link">LogOut</a>
               </div>
             </div>
         </div>

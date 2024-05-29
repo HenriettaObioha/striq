@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/lambo.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'roboto', sans-serif;
+}
+
+.with-blur-backdrop{
+    height:inherit;
+    backdrop-filter: blur(5px);
+}
+
+.button{
+    align-items: right;
+}
+
+.link{
+    /* opacity: 0; */
+    text-align: center;
+    text-transform: capitalize;
+    color: rgb(224, 9, 9);
+    display: block;
+    margin: 30px auto;
+}
+
+.link:hover{
+    color: #22f506;
+}
