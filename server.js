@@ -54,14 +54,13 @@ app.post('/register-user', (req, res) => {
             email: email,
             password: password,
         })
-        .returning(["name", "email"])
         .then(data => {
-            res.json(data[0])
+            res.json(data)
         })
         .catch(err => {
-            if(err.detail.includes('already exists')){
-                res.json('email already exists');
-            }
+            console.log(err)
+            
+            
         })
     }
 })
@@ -77,7 +76,7 @@ app.post('/login-user', (req, res) => {
     })
     .then(data => {
         if(data.length){
-            res.json(data[0]);
+            res.json(data);
         } else{
             res.json('email or password is incorrect');
         }
