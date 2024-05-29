@@ -24,7 +24,7 @@ if(login){ // means login page is open
     const email = document.querySelector('.email');
     const password = document.querySelector('.password');
     login.addEventListener('click', () => {
-        fetch('/login-user',{
+        fetch('https://striq-1.onrender.com/login-user',{
             method: 'post',
             headers: new Headers({'Content-Type': 'application/json'}),
             body: JSON.stringify({
@@ -46,7 +46,7 @@ if(login){ // means login page is open
     const email = document.querySelector('.email');
     const password = document.querySelector('.password');
     register.addEventListener('click', () => {
-        fetch('/register-user', {
+        fetch('https://striq-1.onrender.com/register-user', {
             method: 'post',
             headers: new Headers({'Content-Type': 'application/json'}),
             body: JSON.stringify({
@@ -72,7 +72,7 @@ if(login){ // means login page is open
         const address = document.querySelector('.address');
         const telephone = document.querySelector('.telephone');
         display.addEventListener('click', () => {
-            fetch('/display-user', {
+            fetch('https://striq-1.onrender.com/display-user', {
                 method: 'post',
                 headers: new Headers({'Content-Type': 'application/json'}),
                 body: JSON.stringify({

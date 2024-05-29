@@ -3,7 +3,7 @@ function submitted() {
     // let strText1 = document.getElementById("email").value;
     // let strText2 = document.getElementById("address").value;
     // let strText3 = document.getElementById("telephone").value;
-    fetch('/dashboard-user',{
+    fetch('https://striq-1.onrender.com/dashboard-user',{
         method: 'post',
         headers: new Headers({'Content-Type': 'application/json'}),
         body: JSON.stringify({
