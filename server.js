@@ -6,12 +6,7 @@ const { randomUUID } = require('crypto');
 
 const db = knex({
     client: 'pg',
-    connection: {
-        host: '127.0.0.1',
-        user: 'root',
-        password: 'Henrie$12',
-        database: 'register'
-    }
+    connection: "postgres://register_bin2_user:UgPZyCCcLgButrtm7uNMdszx0yN0ILiS@dpg-cpbp8urtg9os73cp7ta0-a.oregon-postgres.render.com/register_bin2"
 })
 //db.migrate.latest();
 
