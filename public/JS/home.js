@@ -2,7 +2,7 @@ const greeting = document.querySelector('.greeting');
 
 window.onload = () => {
     if(!sessionStorage.name){
-        location.href = 'https://striq.onrender.com/login';
+        location.href = 'https://striq-1.onrender.com/login';
     } else{
         greeting.innerHTML = `hello ${sessionStorage.name}`;
     }

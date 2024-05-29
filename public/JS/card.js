@@ -13,7 +13,7 @@ function submitted() {
     })
     .then(res => {
         console.log(res)
-        window.location.href = "https://striq.onrender.com/display"
+        window.location.href = "https://striq-1.onrender.com/display"
     })
     .then(data => {
         // validateData(data);

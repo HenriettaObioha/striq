@@ -10,7 +10,7 @@ form.forEach((item, i) => {
 
 window.onload = () => {
     if(sessionStorage.name){
-        location.href = 'https://striq.onrender.com';
+        location.href = 'https://striq-1.onrender.com';
     }
 }
 
@@ -34,7 +34,7 @@ if(login){ // means login page is open
         })
         .then(res => {
             console.log(res)
-            window.location.href = "https://striq.onrender.com/display"
+            window.location.href = "https://striq-1.onrender.com/display"
         })
         .then(data => {
             // validateData(data);
@@ -58,7 +58,7 @@ if(login){ // means login page is open
         })
         .then(res => {
             console.log(res)
-            window.location.href = "https://striq.onrender.com/login"
+            window.location.href = "https://striq-1.onrender.com/login"
         })
         .catch(data => {
             console.log(data)
@@ -86,7 +86,7 @@ if(login){ // means login page is open
                 return res.text()
             })
             .then(res => {
-                window.location.href=`https://striq.onrender.com/dashboard-user/${res}`
+                window.location.href=`https://striq-1.onrender.com/dashboard-user/${res}`
             })
             .catch(data => {
                 console.log(data)
