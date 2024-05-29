@@ -58,7 +58,7 @@ if(login){ // means login page is open
         })
         .then(res => {
             console.log(res)
-            window.location.href = "https://striq-1.onrender.com/login"
+            window.location.href = "/login"
         })
         .catch(data => {
             console.log(data)
