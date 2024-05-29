@@ -40,7 +40,7 @@ if(login){ // means login page is open
             // validateData(data);
         })
     })
-} else{ // means the register page is open
+}else if(register){ // means the register page is open
     const firstname = document.querySelector('.firstname');
     const lastname = document.querySelector('.lastname');
     const email = document.querySelector('.email');
@@ -66,7 +66,7 @@ if(login){ // means login page is open
         })
     })
 
-}if (display){ // means the display page is open
+}else if (display){ // means the display page is open
         const nameofservice = document.querySelector('.nameofservice');
         const email = document.querySelector('.email');
         const address = document.querySelector('.address');
@@ -83,9 +83,13 @@ if(login){ // means login page is open
                 })
             })
             .then(res => {
-                console.log(res)
+                return res.text()
             })
-            .then(data => {
+            .then(res => {
+                window.location.href=`http://localhost:3000/dashboard-user/${res}`
+            })
+            .catch(data => {
+                console.log(data)
                 //validateData(data);
             })
         })

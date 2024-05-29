@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> STRIQ  </title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/card.css">
+    <!-- <script src="JS/card.js"></script> -->
+</head>
+
+<body class="with-blur-backdrop">
+    <div class="container">
+        <div class="card">
+          <!-- <div class="qr"> -->
+            <!-- <img src="./images/lambo.jpg" alt="qr code which leads to Frontend Mentor"> -->
+                <div class="content">
+
+                    <!-- Output Form Details -->
+                    <ul>
+                       <% users.forEach(user => { %> 
+                        <li>
+                          <%= user.nameofservice %>
+                        </li> 
+                        <li>
+                          <%= user.email %>
+                        </li>
+                        <li>
+                          <%= user.address %>
+                        </li>
+                        <li>
+                          <%= user.telephone %>
+                        </li>
+                        <% }) %>
+                      
+                    </ul>
+        
+              </div>
+            </div>
+        </div>
+      </div>
+<!-- 
+<script src="JS/home.js"></script> -->
+
+</body> 
+
+</html>

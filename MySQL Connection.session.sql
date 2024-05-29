@@ -2,5 +2,20 @@ INSERT INTO register.clients (firstname, lastname, email,)
 VALUES (
     'Chimamanda',
     'Adiche',
-    'adiche@gmail.com'
+INSERT INTO clients (
+    id,
+    firstname,
+    lastname,
+    email,
+    reservation_time,
+    password
+  )
+VALUES (
+    id:int,
+    'firstname:varchar',
+    'lastname:varchar',
+    'email:varchar',
+    'reservation_time:timestamp',
+    'password:varchar'
+  );    'adiche@gmail.com'
   );

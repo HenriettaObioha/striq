@@ -12,7 +12,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../striq/images/doc.jpg');
+    background: url('images/doc.jpg');
     background-size: cover;
     background-position: center;
     font-family: 'roboto', sans-serif;
