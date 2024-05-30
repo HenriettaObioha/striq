@@ -1,39 +1,49 @@
-const express = require('express');
+constantly express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const knex = require('knex');
 const { randomUUID } = require('crypto');
 
-
 const db = knex({
   client: 'pg',
   connection: {
     connectionString: "postgres://register_bin2_user:UgPZyCCcLgButrtm7uNMdszx0yN0ILiS@dpg-cpbp8urtg9os73cp7ta0-a.oregon-postgres.render.com/register_bin2",
-    ssl: {
+  ssl: {
       rejectUnauthorized: true
     }
   }
 });
 //db.migrate.latest();
-knex.schema.createTableIfNotExists('clients', function(table) {
-    table.increments('id').primary();
-    table.string('firstname').notNullable();
-    table.string('lastname').notNullable();
-    table.string('email').notNullable().unique();
-    table.string('password').notNullable();
-    table.timestamps(true, true); // Adds created_at and updated_at columns
-  });
-knex.schema.createTableIfNotExists('service', function(table) {
-    table.uuid('id').primary();
-    table.string('nameofservice').notNullable();
-    table.string('email').notNullable();
-    table.string('address').notNullable();
-    table.string('telephone').notNullable();
-    table.timestamps(true, true); // Adds created_at and updated_at columns
-  });
+
+// Check if the 'clients' table exists before creating it
+db.schema.hasTable('clients').then(exists => {
+  if (!exists) {
+    return db.schema.createTable('clients', function(table) {
+      table.increments('id').primary();
+      table.string('firstname').notNullable();
+      table.string('lastname').notNullable();
+      table.string('email').notNullable().unique();
+      table.string('password').notNullable();
+      table.timestamps(true, true); // Adds created_at and updated_at columns
+    });
+  }
+});
+
+// Check if the 'service' table exists before creating it
+db.schema.hasTable('service').then(exists => {
+  if (!exists) {
+    return db.schema.createTable('service', function(table) {
+      table.uuid('id').primary();
+      table.string('nameofservice').notNullable();
+      table.string('email').notNullable();
+      table.string('address').notNullable();
+      table.string('telephone').notNullable();
+      table.timestamps(true, true); // Adds created_at and updated_at columns
+    });
+  }
+});
+
 const app = express();
-
-
 
 let intialPath = path.join(__dirname, "public");
 
