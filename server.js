@@ -4,13 +4,16 @@ const bodyParser = require('body-parser');
 const knex = require('knex');
 const { randomUUID } = require('crypto');
 
+
 const db = knex({
-    client: 'pg',
-    connection: "postgres://register_bin2_user:UgPZyCCcLgButrtm7uNMdszx0yN0ILiS@dpg-cpbp8urtg9os73cp7ta0-a.oregon-postgres.render.com/register_bin2",
+  client: 'pg',
+  connection: {
+    connectionString: "postgres://register_bin2_user:UgPZyCCcLgButrtm7uNMdszx0yN0ILiS@dpg-cpbp8urtg9os73cp7ta0-a.oregon-postgres.render.com/register_bin2",
     ssl: {
-        rejectUnauthorized: true,
-        }
-})
+      rejectUnauthorized: true
+    }
+  }
+});
 //db.migrate.latest();
 
 const app = express();
