@@ -15,7 +15,22 @@ const db = knex({
   }
 });
 //db.migrate.latest();
-
+knex.schema.createTableIfNotExists('clients', function(table) {
+    table.increments('id').primary();
+    table.string('firstname').notNullable();
+    table.string('lastname').notNullable();
+    table.string('email').notNullable().unique();
+    table.string('password').notNullable();
+    table.timestamps(true, true); // Adds created_at and updated_at columns
+  });
+knex.schema.createTableIfNotExists('service', function(table) {
+    table.uuid('id').primary();
+    table.string('nameofservice').notNullable();
+    table.string('email').notNullable();
+    table.string('address').notNullable();
+    table.string('telephone').notNullable();
+    table.timestamps(true, true); // Adds created_at and updated_at columns
+  });
 const app = express();
 
 
