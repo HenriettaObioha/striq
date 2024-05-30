@@ -25,3 +25,9 @@ html,
 .content{
   font-color: #ffffff;
 }
+
+input:focus::placeholder{
+    color: #ffffff;
+
+  input::placeholder{
+    color: #ffffff;
