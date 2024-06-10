@@ -17,3 +17,5 @@ Installation (local installation):
 Clone the repository:
 git clone https://github.com/your-username/striq.git
 cd striq
+
+App link:  https://striq-1.onrender.com/register
